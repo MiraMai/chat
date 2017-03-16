@@ -1,1 +1,91 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Chat-chat-chat</title>
+        
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    window.addEventListener('load', function() { // Windows load
+        
+        var usernameInput = document.getElementById('username');
+        let loginbtn = document.getElementById('loginbtn');
+        let logoutbtn = document.getElementById('logoutbtn');
+        let welcome = document.getElementById('welcome');
+        logoutbtn.style.display = "none";
+        
+
+        loginbtn.addEventListener('click', function(){            
+        
+                localStorage.setItem('username', usernameInput.value);
+                console.log(localStorage.getItem('username'));
+                welcome.innerHTML = "Welcome " + usernameInput.value + " :)";
+                usernameInput.style.display = "none";
+                loginbtn.style.display = "none";
+                logoutbtn.style.display = "inline";
+
+            
+        });
+        
+        logoutbtn.addEventListener('click', function() {
+            
+                localStorage.removeItem("username");
+                console.log(localStorage.getItem('username'));
+                welcome.innerHTML = "";
+                usernameInput.style.display = "inline";
+                loginbtn.style.display = "inline";
+                logoutbtn.style.display = "none";
+
+            
+            
+        });
+        
+ //   }
+        
+    }); // Window load     
+        
+</script>
+    </head>
+    
+    <body>
+      <div class="container">
+        <div class="row">
+           <div class="col-sm-12 text-center"><h1>Welcome to chat-chat-chat!</h1></div>  
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-xs-2 col-sm-4"></div>
+          <div class="col-xs-8 col-sm-4">
+            
+                <div class="form-group">
+                    <input type="username" class="form-control" id="username" placeholder="Username">
+                </div>
+                <button type="login" class="btn btn-default" id="loginbtn">Login</button>
+              <button type="logout" class="btn btn-default" id="logoutbtn">Logout</button>
+              
+          </div>
+          <div class="col-xs-2 col-sm-4"></div>    
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center"><h1 id="welcome"></h1></div>
+        </div>  
+      </div>      
+    
+    </body>
+    
+
+
+
+</html>
