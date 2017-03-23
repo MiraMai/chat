@@ -22,6 +22,8 @@
         let loginbtn = document.getElementById('loginbtn');
         let logoutbtn = document.getElementById('logoutbtn');
         let welcome = document.getElementById('welcome');
+        let message = document.getElementById('message');
+        let send = document.getElementById('send');
         logoutbtn.style.display = "none";
         
 
@@ -45,16 +47,35 @@
                 usernameInput.style.display = "inline";
                 loginbtn.style.display = "inline";
                 logoutbtn.style.display = "none";
-
-            
+                chat.style.display = "none";
+                window.location.reload();             
             
         });
         
+        
+
+  var currentDate = new Date(),
+      day = currentDate.getDate(),
+      month = currentDate.getMonth() + 1,
+      year = currentDate.getFullYear();
+  console.log(day + "/" + month + "/" + year);
+
+  var currentTime = new Date(),
+      hours = currentTime.getHours(),
+      minutes = currentTime.getMinutes();
+
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+  }
+
+	console.log(hours + ":" + minutes);
+  
  //   }
         
-    }); // Window load     
+    }); // Window load    
         
 </script>
+    
     </head>
     
     <body>
@@ -80,9 +101,96 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-center"><h1 id="welcome"></h1></div>
-        </div>  
-      </div>      
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+             <div class="col-sm-6">
+                  <textarea class="form-control" rows="5" id="message"></textarea>
+                  <button type="send" class="btn btn-default" id="send">Send</button>
+                </div>
+            <div class="col-sm-3"></div>
+          </div>  
+          
+          <div class="row">
+            <div class="col-sm-12" id="chat">
+              
+            </div>
+          </div>
+      </div>   
+        
+    <!--********************** firebase***************************-->
+        
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDswQw1vBTEt9Asf_EeNl4pFbJdUs4xt1Q",
+    authDomain: "chat-chat-chat-e26df.firebaseapp.com",
+    databaseURL: "https://chat-chat-chat-e26df.firebaseio.com",
+    storageBucket: "chat-chat-chat-e26df.appspot.com",
+    messagingSenderId: "345910730022"
+  };
+  firebase.initializeApp(config);
+</script>
+<!--****************************************************************        -->    
     
+    <script type="text/javascript">
+            window.addEventListener('load', function() { // Windows load
+                
+                var usernameInput = document.getElementById('username');
+
+                
+                
+                let message = document.getElementById('message');
+                let chat = document.getElementById('chat');
+                let sendbtn = document.getElementById('send');
+                
+                
+                sendbtn.addEventListener('click', function(meddelande){
+                    chat.innerHTML = "";
+                    firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
+					    name: usernameInput.value,
+                        message: message.value
+                })
+                    message.value = "";
+                });
+                
+// show firebase content 
+                
+        loginbtn.addEventListener('click', function(){            
+                
+                firebase.database().ref('inputMessage/').on('value', function(snapshot) {
+                    let dataObject = snapshot.val();
+                    
+                    for (let i in dataObject) {
+                        
+                        console.log(dataObject[i].message);
+                        
+                        let div = document.createElement('div');
+                        div.innerHTML = dataObject[i].message + ", " + dataObject[i].name;
+                        chat.appendChild(div);
+                        
+                       // list.insertBefore(newItem, list.childNodes[0]); 
+                        
+                        
+                    }
+                                       
+                })
+                
+        });
+                
+               /* firebase.database().ref('inputMessage/'  + usernameInput.value).on('value', function(snapshot) {
+                   console.log(snapshot.val());
+                   
+                })*/
+                
+                     
+                
+                
+            }); // Windows load
+        
+        </script>
+        
     </body>
     
 
