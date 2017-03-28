@@ -260,7 +260,8 @@ window.addEventListener('load', function() { // Windows load
               
              let githbLogin = document.getElementById('githbLogin');
     
-    
+    githbLogin.addEventListener('click', function (){
+        
              let provider = new firebase.auth.GithubAuthProvider();  
     
              firebase.auth().signInWithPopup(provider)
@@ -270,8 +271,8 @@ window.addEventListener('load', function() { // Windows load
                  });
 
     console.log(provider);
-    console.log(user);
-
+    
+});
     
     
     }); // Windows load
