@@ -17,87 +17,10 @@
         
 <script src="https://use.fontawesome.com/a9f9509e90.js"></script>        
 
-<script>
-    window.addEventListener('load', function() { // Windows load
-        
-        var usernameInput = document.getElementById('username');
-        let loginbtn = document.getElementById('loginbtn');
-        let logoutbtn = document.getElementById('logoutbtn');
-        let welcome = document.getElementById('welcome');
-        let message = document.getElementById('message');
-        let send = document.getElementById('send');
-        logoutbtn.style.display = "none";
-        message.style.display = "none";
-        send.style.display = "none";
-        
+<script src="localStorage.js"></script>
 
-        loginbtn.addEventListener('click', function(){            
-        
-                localStorage.setItem('username', usernameInput.value);
-                console.log(localStorage.getItem('username'));
-                welcome.innerHTML = "Welcome " + usernameInput.value + " :)";
-                usernameInput.style.display = "none";
-                loginbtn.style.display = "none";
-                logoutbtn.style.display = "inline";
-                message.style.display = "inline";
-                send.style.display = "inline";
-            
-        });
-        
-        logoutbtn.addEventListener('click', function() {
-            
-                localStorage.removeItem("username");
-                console.log(localStorage.getItem('username'));
-                welcome.innerHTML = "";
-                usernameInput.style.display = "inline";
-                loginbtn.style.display = "inline";
-                logoutbtn.style.display = "none";
-                chat.style.display = "none";
-                message.style.display = "none";
-                send.style.display = "none";
-        
-                window.location.reload();             
-            
-        });
-        
-        
-
-
-  
- //   }
-        
-    }); // Window load    
-        
-</script>
-    
-        <style>
-        
-            td:first-child {
-                font-family: Arial, Helvetica, sans-serif;
-/*                font-weight: bold;*/
-                font-size: 13pt; 
-                background-color: #f5f5ef;
-                
-            }
-            
-            td:nth-child(2) {
-               font-family: "Comic Sans MS", cursive, sans-serif;
-               font-size: 14pt;                
-            }
-            
-            td:nth-child(3) {
-                font-family: "Lucida Console", Monaco, monospace;
-                font-size: 9pt;
-                color: #afaf83;
-
-            }
-            
-            table {
-                margin-top: 100px;
-            }
-        
-        
-        </style>
+<link rel="stylesheet" href="style.css">
+       
         
         
     </head>
@@ -115,16 +38,16 @@
           <div class="col-xs-4">
             
                 <div class="form-group">
-                    <p>Create a username:</p>
+                    <p id="createUser">Create a username:</p>
                     <input type="username" class="form-control" id="username" placeholder="Username">
                 </div>
                 <button type="login" class="btn btn-default" id="loginbtn">Login</button>
               
           </div>
           <div class="col-xs-2">
-              <h3 class="text-center">or</h3>
+              <h3 class="text-center" id="or">or</h3>
           </div> 
-          <div class="col-xs-4">
+          <div class="col-xs-4 text-center">
               <br>
               <button class="btn btn-default" id="githbLogin">Login with github <i class="fa fa-github fa-2x" aria-hidden="true"></i>
               </button>
@@ -180,109 +103,9 @@
   firebase.initializeApp(config);
 </script>
 <!--****************************************************************        -->    
-    
-    <script type="text/javascript">      
-        
-window.addEventListener('load', function() { // Windows load
-          
-// hämtar alla element                   
-    var usernameInput = document.getElementById('username');              
-    let message = document.getElementById('message');
-    let chat = document.getElementById('chat');
-    let sendbtn = document.getElementById('send');         
-          
-                
-     // date function                
-          var currentDate = new Date(),
-          day = currentDate.getDate(),
-          month = currentDate.getMonth() + 1,
-          year = currentDate.getFullYear();
-
-     // time function                
-          var currentTime = new Date(),
-          hours = currentTime.getHours(),
-          minutes = currentTime.getMinutes();
-            if (minutes < 10) {
-	             minutes = "0" + minutes;
-             }              
-    
-                
-   // när man klickar på send button skapar man ett object med egenskaperna nedan         
-     sendbtn.addEventListener('click', function(meddelande){
-                        
-                  chat.innerHTML = "";
-                  let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
-					    name: usernameInput.value,
-                        message: message.value,
-                        time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
-            
-                })
-                    message.value = "";
-                    
-                });
-    
-
- // show firebase content in table element
-
-        loginbtn.addEventListener('click', function(){          
-            
-
-             firebase.database().ref('inputMessage/').on('value', function(snapshot) {
-// använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
-                 snapshot.forEach(child => {
-                     let key = child.key;
-                     let o = child.val();
-               
-/*                    let dataObject = snapshot.val();
-                    for (let i in dataObject) {
-                        let o = dataObject[i];*/
-//                        console.log(dataObject);
-//                        console.log(dataObject[i].message);
-                    
-                     // skapar en table   
-                      let tr = document.createElement('tr');
-                      let tdName = document.createElement('td');
-                      let tdMessage = document.createElement('td');
-                      let tdTime = document.createElement('td');
-                     
-                     // set the content of the table 
-                      tr.id = key;
-                      tdName.innerHTML = o.name+ ":";
-                      tdMessage.innerHTML = o.message;
-                      tdTime.innerHTML = o.time;
-                        
-                     // push the content to the table   
-                      chat.insertBefore(tr, chat.firstChild);
-                      tr.appendChild(tdName);
-                      tr.appendChild(tdMessage);
-                      tr.appendChild(tdTime);                       
-                
-        
-                     });
-                  })
-              });
-                
-              
-             let githbLogin = document.getElementById('githbLogin');
-    
-    githbLogin.addEventListener('click', function (){
-        
-             let provider = new firebase.auth.GithubAuthProvider();  
-    
-             firebase.auth().signInWithPopup(provider)
-                 .then(function(result) {
-	             // Om autentisering lyckas, så finns användarinfo i user
-	              let user = result.user;
-                 console.log(user);
-                 console.log(user.email);
-                 });
-    
-});
-    
-    
-    }); // Windows load
-        
-        </script>
+    <script src="firebase.js"></script>
+    <script src="authentication.js"></script>
+   
         
     </body>
     
