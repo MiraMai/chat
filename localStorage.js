@@ -6,7 +6,6 @@
         let welcome = document.getElementById('welcome');
         let message = document.getElementById('message');
         let send = document.getElementById('send');
-        let createUser = document.getElementById('createUser');
         let or = document.getElementById('or');
         logoutbtn.style.display = "none";
         message.style.display = "none";
@@ -20,7 +19,6 @@
                 welcome.innerHTML = "Welcome " + usernameInput.value + " :)";
                 usernameInput.style.display = "none";
                 loginbtn.style.display = "none";
-                createUser.style.display = "none";
                 or.style.display = "none";
                 githbLogin.style.display = "none";
                 logoutbtn.style.display = "inline";
