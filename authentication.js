@@ -26,6 +26,7 @@ window.addEventListener('load', function() { // Windows load
 	              let user = result.user;
                  console.log(user);
                  console.log(user.email);
+                 console.log(user.name);
                  
         
                 
