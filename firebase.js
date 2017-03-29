@@ -122,6 +122,14 @@ window.addEventListener('load', function() { // Windows load
                 firebase.auth().signOut()
                 .then(function(result) {
 	         console.log('Utloggning lyckades');
+                usernameInput.style.display = "inline";
+                loginbtn.style.display = "inline";
+                logoutbtn.style.display = "none";
+                chat.style.display = "none";
+                message.style.display = "none";
+                send.style.display = "none";
+        
+                window.location.reload();             
                     })
                 .catch(function(error) {
 	         console.log('Utloggning misslyckades');
