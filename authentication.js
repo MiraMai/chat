@@ -43,6 +43,8 @@ window.addEventListener('load', function() { // Windows load
                 message.style.display = "inline";
                 send.style.display = "inline";
                  
+                 loginFunction();
+                 
                  });
     
 });

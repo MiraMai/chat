@@ -39,8 +39,7 @@ window.addEventListener('load', function() { // Windows load
 
  // show firebase content in table element
 
-        loginbtn.addEventListener('click', function(){          
-            
+        let loginFunction = function () {                   
 
              firebase.database().ref('inputMessage/').on('value', function(snapshot) {
 // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
@@ -75,5 +74,7 @@ window.addEventListener('load', function() { // Windows load
         
                      });
                   })
-              });
+              };
+            loginbtn.addEventListener('click', loginFunction);
+
                 });// windows load
