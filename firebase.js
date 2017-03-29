@@ -81,6 +81,8 @@ window.addEventListener('load', function() { // Windows load
 //******************* authentication ********************    
    let provider = new firebase.auth.GithubAuthProvider();  
     
+        githbLogin.addEventListener('click', function (){
+
              firebase.auth().signInWithPopup(provider)
                  .then(function(result) {
 	             // Om autentisering lyckas, så finns användarinfo i user
@@ -106,7 +108,7 @@ window.addEventListener('load', function() { // Windows load
                  
                  loginFunction();
                  
-                 
+               });  
     
 });
 //************************************************
