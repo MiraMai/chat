@@ -30,7 +30,7 @@ window.addEventListener('load', function() { // Windows load
                  console.log(user.photoURL);
                  
                 let img = document.createElement('img');
-                img.src = "user.photoURL";
+                img.src = "https://avatars2.githubusercontent.com/u/21669954?v=3";
                 loggedinName.appendChild(img);
                  
                 
