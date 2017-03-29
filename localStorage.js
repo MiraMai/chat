@@ -32,7 +32,6 @@
             
                 localStorage.removeItem("username");
                 console.log(localStorage.getItem('username'));
-                welcome.innerHTML = "";
                 usernameInput.style.display = "inline";
                 loginbtn.style.display = "inline";
                 logoutbtn.style.display = "none";
