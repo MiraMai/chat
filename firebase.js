@@ -117,6 +117,17 @@ window.addEventListener('load', function() { // Windows load
 });
     
 //***************** log out with github*****************
+    logoutGithub.addEventListener('click', function() {
+        // Logga ut den autentiserade användaren
+                firebase.auth().signOut()
+                .then(function(result) {
+	         console.log('Utloggning lyckades');
+                    })
+                .catch(function(error) {
+	         console.log('Utloggning misslyckades');
+                });
+
+        });
 //************************************************
 
                 });// windows load
