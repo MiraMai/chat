@@ -8,9 +8,11 @@
         let send = document.getElementById('send');
         let or = document.getElementById('or');
         let loggedinName = document.getElementById('loggedinName');
+        let logoutGithub = document.getElementById('getElementById');
         logoutbtn.style.display = "none";
         message.style.display = "none";
         send.style.display = "none";
+        logoutGithub.style.display = "none";
         
 
         loginbtn.addEventListener('click', function(){            

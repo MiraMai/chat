@@ -4,8 +4,10 @@ window.addEventListener('load', function() { // Windows load
     var usernameInput = document.getElementById('username');              
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
-    let sendbtn = document.getElementById('send');         
-          
+    let sendbtn = document.getElementById('send');
+    let logoutGithub = document.getElementById('getElementById');
+    logoutGithub.style.display = "none";
+     
                 
      // date function                
           var currentDate = new Date(),
@@ -78,7 +80,7 @@ window.addEventListener('load', function() { // Windows load
             loginbtn.addEventListener('click', loginFunction);
     
     
-//******************* authentication ********************    
+//******************* authentication ********************   //**************** login with github *******************
    let provider = new firebase.auth.GithubAuthProvider();  
     
         githbLogin.addEventListener('click', function (){
@@ -102,15 +104,19 @@ window.addEventListener('load', function() { // Windows load
                 githbLogin.style.display = "none";
                 loginbtn.style.display = "none";
                 or.style.display = "none";
-                logoutbtn.style.display = "inline";
+                logoutbtn.style.display = "none";
                 message.style.display = "inline";
                 send.style.display = "inline";
+                logoutGithub.style.display = "inline";
+ 
                  
                  loginFunction();
                  
                });  
     
 });
+    
+//***************** log out with github*****************
 //************************************************
 
                 });// windows load
