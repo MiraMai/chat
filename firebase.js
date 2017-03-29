@@ -5,7 +5,7 @@ window.addEventListener('load', function() { // Windows load
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
     let sendbtn = document.getElementById('send');
-    let logoutGithub = document.getElementById('getElementById');
+    let logoutGithub = document.getElementById('logoutGithub');
     logoutGithub.style.display = "none";
      
                 
