@@ -24,6 +24,7 @@
                 loginbtn.style.display = "none";
                 or.style.display = "none";
                 githbLogin.style.display = "none";
+                logoutGithub.style.display = "none";
                 logoutbtn.style.display = "inline";
                 message.style.display = "inline";
                 send.style.display = "inline";
