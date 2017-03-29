@@ -29,7 +29,10 @@ window.addEventListener('load', function() { // Windows load
                  console.log(user.displayName);
                  console.log(user.photoURL);
                  
-        
+                let img = document.createElement('img');
+                img.src = "user.photoURL";
+                loggedinName.appendChild(img);
+                 
                 
                 loggedinName.innerHTML = "Logged in as " + user.email;
                 usernameInput.style.display = "none";
