@@ -1,6 +1,18 @@
 window.addEventListener('load', function() { // Windows load
           
-
+        let usernameInput = document.getElementById('username');
+        let loginbtn = document.getElementById('loginbtn');
+        let logoutbtn = document.getElementById('logoutbtn');
+        let welcome = document.getElementById('welcome');
+        let message = document.getElementById('message');
+        let send = document.getElementById('send');
+        let or = document.getElementById('or');
+        let loggedinName = document.getElementById('loggedinName');
+        logoutbtn.style.display = "none";
+        message.style.display = "none";
+        send.style.display = "none";
+    
+    
               
              let githbLogin = document.getElementById('githbLogin');
     

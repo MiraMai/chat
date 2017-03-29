@@ -1,6 +1,6 @@
  window.addEventListener('load', function() { // Windows load
         
-        var usernameInput = document.getElementById('username');
+        let usernameInput = document.getElementById('username');
         let loginbtn = document.getElementById('loginbtn');
         let logoutbtn = document.getElementById('logoutbtn');
         let welcome = document.getElementById('welcome');
