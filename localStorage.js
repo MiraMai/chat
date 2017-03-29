@@ -7,6 +7,7 @@
         let message = document.getElementById('message');
         let send = document.getElementById('send');
         let or = document.getElementById('or');
+        let loggedinName = document.getElementById('loggedinName');
         logoutbtn.style.display = "none";
         message.style.display = "none";
         send.style.display = "none";
@@ -16,7 +17,7 @@
         
                 localStorage.setItem('username', usernameInput.value);
                 console.log(localStorage.getItem('username'));
-                welcome.innerHTML = "Welcome " + usernameInput.value + " :)";
+                loggedinName.innerHTML = "Logged in as " + usernameInput.value;
                 usernameInput.style.display = "none";
                 loginbtn.style.display = "none";
                 or.style.display = "none";

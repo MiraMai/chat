@@ -14,6 +14,18 @@ window.addEventListener('load', function() { // Windows load
 	              let user = result.user;
                  console.log(user);
                  console.log(user.email);
+                 
+        
+                
+                loggedinName.innerHTML = "Logged in as " + user.email;
+                usernameInput.style.display = "none";
+                githbLogin.style.display = "none";
+                loginbtn.style.display = "none";
+                or.style.display = "none";
+                logoutbtn.style.display = "inline";
+                message.style.display = "inline";
+                send.style.display = "inline";
+                 
                  });
     
 });
