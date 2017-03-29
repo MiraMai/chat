@@ -106,7 +106,7 @@ window.addEventListener('load', function() { // Windows load
                  
                  loginFunction();
                  
-                 });
+                 
     
 });
 //************************************************
