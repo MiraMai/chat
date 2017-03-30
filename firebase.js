@@ -108,6 +108,11 @@ window.addEventListener('load', function() { // Windows load
                 message.style.display = "inline";
                 send.style.display = "inline";
                 logoutGithub.style.display = "inline";
+                 
+                if(user.email === 'mira.aeridou@gmail.com') {
+                     admin.disabled = true;
+
+                };
  
                  
                  loginFunction();

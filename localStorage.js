@@ -9,10 +9,12 @@
         let or = document.getElementById('or');
         let loggedinName = document.getElementById('loggedinName');
         let logoutGithub = document.getElementById('logoutGithub');
+        let admin = document.getElementById('admin');
         logoutbtn.style.display = "none";
         message.style.display = "none";
         send.style.display = "none";
         logoutGithub.style.display = "none";
+        admin.disabled = true;
         
 
         loginbtn.addEventListener('click', function(){            
@@ -28,6 +30,14 @@
                 logoutbtn.style.display = "inline";
                 message.style.display = "inline";
                 send.style.display = "inline";
+            
+            if(usernameInput.value === 'Mira') {
+                admin.disabled = true;
+
+            };
+            
+        
+             
             
         });
         
