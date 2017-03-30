@@ -1,12 +1,70 @@
 window.addEventListener('load', function() { // Windows load
           
 // hämtar alla element                   
-    var usernameInput = document.getElementById('username');              
+    var usernameInput = document.getElementById('username');     
+    
+    
+    let loginbtn = document.getElementById('loginbtn');
+    let logoutbtn = document.getElementById('logoutbtn');
+    let send = document.getElementById('send');
+    let or = document.getElementById('or');
+    let loggedinName = document.getElementById('loggedinName');
+    let logoutGithub = document.getElementById('logoutGithub');
+    let admin = document.getElementById('admin');
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
-    let sendbtn = document.getElementById('send');
     let logoutGithub = document.getElementById('logoutGithub');
     logoutGithub.style.display = "none";
+    logoutbtn.style.display = "none";
+    message.style.display = "none";
+    send.style.display = "none";
+    admin.disabled = true;
+    
+    
+//**************** local storage ***********************
+    
+    loginbtn.addEventListener('click', function(){            
+        
+                localStorage.setItem('username', usernameInput.value);
+                console.log(localStorage.getItem('username'));
+                loggedinName.innerHTML = "Logged in as " + usernameInput.value;
+                usernameInput.style.display = "none";
+                loginbtn.style.display = "none";
+                or.style.display = "none";
+                githbLogin.style.display = "none";
+                logoutGithub.style.display = "none";
+                logoutbtn.style.display = "inline";
+                message.style.display = "inline";
+                send.style.display = "inline";
+            
+            if(usernameInput.value === 'Mira') {
+                admin.disabled = false;
+
+            };
+            
+        
+             
+            
+        });
+        
+        logoutbtn.addEventListener('click', function() {
+            
+                localStorage.removeItem("username");
+                console.log(localStorage.getItem('username'));
+                usernameInput.style.display = "inline";
+                loginbtn.style.display = "inline";
+                logoutbtn.style.display = "none";
+                chat.style.display = "none";
+                message.style.display = "none";
+                send.style.display = "none";
+        
+                window.location.reload();             
+            
+        });
+        
+        
+
+//*************** local storage end ***********************
      
                 
      // date function                
@@ -25,11 +83,11 @@ window.addEventListener('load', function() { // Windows load
     
                 
    // när man klickar på send button skapar man ett object med egenskaperna nedan         
-     sendbtn.addEventListener('click', function(meddelande){
+     send.addEventListener('click', function(meddelande){
                         
                   chat.innerHTML = "";
                   let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
-					    name: usernameInput.value,
+					    name: localStorage.getItem('username'),
                         message: message.value,
                         time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
             
@@ -83,12 +141,13 @@ window.addEventListener('load', function() { // Windows load
 //******************* authentication ********************   //**************** login with github *******************
    let provider = new firebase.auth.GithubAuthProvider();  
     
-        githbLogin.addEventListener('click', function (){
+        githbLogin.addEventListener('click', function (){                       
 
              firebase.auth().signInWithPopup(provider)
                  .then(function(result) {
 	             // Om autentisering lyckas, så finns användarinfo i user
 	              let user = result.user;
+                  localStorage.setItem('username',user.providerData[0].email);                 // ändra så att send message hämtar från localstorage i stället för inputName
                  console.log(user);
                  console.log(user.providerData[0].email);
                  console.log(user.providerData[0].displayName);
