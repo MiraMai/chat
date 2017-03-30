@@ -124,7 +124,7 @@ window.addEventListener('load', function() { // Windows load
                     let tdTime = document.createElement('td');  
                      
                      // set the content of the table 
-                      tr.id = key;
+              //        tr.id = key;
                       tdName.innerHTML = user.providerData[0].email+ ":";
                       tdMessage.innerHTML = o.message;
                       tdTime.innerHTML = o.time;
