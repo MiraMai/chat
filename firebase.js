@@ -137,7 +137,8 @@ window.addEventListener('load', function() { // Windows load
             loginbtn.addEventListener('click', loginFunction);
     
     
-//******************* authentication ********************   //**************** login with github *******************
+//******************* authentication ********************   
+    //**************** login with github *******************
    let provider = new firebase.auth.GithubAuthProvider();  
     
         githbLogin.addEventListener('click', function (){                       
@@ -184,6 +185,7 @@ window.addEventListener('load', function() { // Windows load
                 firebase.auth().signOut()
                 .then(function(result) {
 	         console.log('Utloggning lyckades');
+                localStorage.removeItem('username',user.providerData[0].email);   
                 usernameInput.style.display = "inline";
                 loginbtn.style.display = "inline";
                 logoutbtn.style.display = "none";
