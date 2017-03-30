@@ -99,7 +99,7 @@ window.addEventListener('load', function() { // Windows load
                 loggedinName.appendChild(img);
                 */
                  
-                tdName.innerHTML = user.providerData[0].email+ ":";
+//                tdName.innerHTML = user.providerData[0].email+ ":";
  
                 loggedinName.innerHTML = "Logged in as " + user.providerData[0].email + user.providerData[0].displayName;
                 usernameInput.style.display = "none";
