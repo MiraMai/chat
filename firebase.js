@@ -90,16 +90,16 @@ window.addEventListener('load', function() { // Windows load
 	             // Om autentisering lyckas, så finns användarinfo i user
 	              let user = result.user;
                  console.log(user);
-                 console.log(user.email);
-                 console.log(user.displayName);
-                 console.log(user.photoURL);
+                 console.log(user.providerData[0].email);
+                 console.log(user.providerData[0].displayName);
+                 console.log(user.providerData[0].photoURL);
                  
                 let img = document.createElement('img');
-                img.setAttribute('src', user.photoURL);
+                img.setAttribute('src', user.providerData[0].photoURL);
                 loggedinName.appendChild(img);
                 tdName.innerHTML = user.email + ":"; 
                 
-                loggedinName.innerHTML = "Logged in as " + user.email;
+                loggedinName.innerHTML = "Logged in as " + user.providerData[0].email + user.providerData[0].displayName;
                 usernameInput.style.display = "none";
                 githbLogin.style.display = "none";
                 loginbtn.style.display = "none";
