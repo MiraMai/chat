@@ -180,11 +180,6 @@ window.addEventListener('load', function() { // Windows load
                      loginFunction();
                });  
             
-            .catch(function(error) {
-	            console.log('Inloggning på github missluckades');
-                loggedinName.innerHTML = "Login with Github failed. Please try again."
-                });
-    
 });
     
 //***************** log out with github*****************
