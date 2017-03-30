@@ -155,15 +155,15 @@ window.addEventListener('load', function() { // Windows load
                  console.log(user.providerData[0].photoURL);
                  
                let img = document.createElement('img');
-                 img.style.width = '50px';
-                 img.style.height = '50px';
+                 img.style.width = '75px';
+                 img.style.height = '75px';
                 img.setAttribute('src', user.providerData[0].photoURL);
                 pic.appendChild(img);
                 
                  
 //                tdName.innerHTML = user.providerData[0].email+ ":";
  
-                loggedinName.innerHTML = "Logged in as " + user.providerData[0].email + user.providerData[0].displayName;
+                loggedinName.innerHTML = "Logged in as " + user.providerData[0].displayName;
                 usernameInput.style.display = "none";
                 githbLogin.style.display = "none";
                 loginbtn.style.display = "none";
