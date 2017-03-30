@@ -37,14 +37,7 @@ window.addEventListener('load', function() { // Windows load
                     message.value = "";
                     
                 });
-//******************************************************    
-// skapar en table   
-                      let tr = document.createElement('tr');
-                      let tdName = document.createElement('td');
-                      let tdMessage = document.createElement('td');
-                      let tdTime = document.createElement('td');
-    
- //********************************************************   
+
  // show firebase content in table element
 
         let loginFunction = function () {                   
@@ -60,10 +53,13 @@ window.addEventListener('load', function() { // Windows load
                         let o = dataObject[i];*/
 //                        console.log(dataObject);
 //                        console.log(dataObject[i].message);
-     //**********************************************************
-    //**********************************************************
-    //******************************************************
                      
+                     
+                   // skapar en table   
+                    let tr = document.createElement('tr');
+                    let tdName = document.createElement('td');
+                    let tdMessage = document.createElement('td');
+                    let tdTime = document.createElement('td');  
                      
                      // set the content of the table 
                       tr.id = key;
