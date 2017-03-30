@@ -148,37 +148,42 @@ window.addEventListener('load', function() { // Windows load
                  .then(function(result) {
 	             // Om autentisering lyckas, så finns användarinfo i user
 	              let user = result.user;
-                  localStorage.setItem('username',user.providerData[0].displayName);                 // ändra så att send message hämtar från localstorage i stället för inputName
-                 console.log(user);
-                 console.log(user.providerData[0].email);
-                 console.log(user.providerData[0].displayName);
-                 console.log(user.providerData[0].photoURL);
+                  localStorage.setItem('username',user.providerData[0].displayName);              
+                         console.log(user);
+                         console.log(user.providerData[0].email);
+                         console.log(user.providerData[0].displayName);
+                         console.log(user.providerData[0].photoURL);
                  
-               let img = document.createElement('img');
-                 img.style.width = '75px';
-                 img.style.height = '75px';
-                img.setAttribute('src', user.providerData[0].photoURL);
-                pic.appendChild(img);
+// skapar ett img element som använder bild från github
+                         let img = document.createElement('img');
+                         img.style.width = '75px';
+                         img.style.height = '75px';
+                         img.setAttribute('src', user.providerData[0].photoURL);
+                         pic.appendChild(img);
                 
                  
-//                tdName.innerHTML = user.providerData[0].email+ ":";
  
-                loggedinName.innerHTML = "Logged in as " + user.providerData[0].displayName;
-                usernameInput.style.display = "none";
-                githbLogin.style.display = "none";
-                loginbtn.style.display = "none";
-                or.style.display = "none";
-                logoutbtn.style.display = "none";
-                message.style.display = "inline";
-                send.style.display = "inline";
-                logoutGithub.style.display = "inline";
+                        loggedinName.innerHTML = "Logged in as " + user.providerData[0].displayName;
+                        usernameInput.style.display = "none";
+                        githbLogin.style.display = "none";
+                        loginbtn.style.display = "none";
+                        or.style.display = "none";
+                        logoutbtn.style.display = "none";
+                        message.style.display = "inline";
+                        send.style.display = "inline";
+                        logoutGithub.style.display = "inline";
                  
                 if(user.email === 'mira.aeridou@gmail.com') {
                      admin.disabled = false;
 
                 }                 
-                 loginFunction();
+                     loginFunction();
                });  
+            
+            .catch(function(error) {
+	            console.log('Inloggning på github missluckades');
+                loggedinName.innerHTML = "Login with Github failed. Please try again."
+                });
     
 });
     
@@ -187,9 +192,9 @@ window.addEventListener('load', function() { // Windows load
         // Logga ut den autentiserade användaren
                 firebase.auth().signOut()
                 .then(function(result) {
-	         console.log('Utloggning lyckades');
+	            console.log('Utloggning lyckades');
                 localStorage.clear();
-//                localStorage.removeItem('username',user.providerData[0].email);   
+//              localStorage.removeItem('username',user.providerData[0].email);   
                 usernameInput.style.display = "inline";
                 loginbtn.style.display = "inline";
                 logoutbtn.style.display = "none";
