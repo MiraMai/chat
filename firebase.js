@@ -13,6 +13,7 @@ window.addEventListener('load', function() { // Windows load
     let admin = document.getElementById('admin');
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
+    let pic = document.getElementById('pic');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
@@ -155,7 +156,7 @@ window.addEventListener('load', function() { // Windows load
                  
                let img = document.createElement('img');
                 img.setAttribute('src', user.providerData[0].photoURL);
-                loggedinName.appendChild(img);
+                pic.appendChild(img);
                 
                  
 //                tdName.innerHTML = user.providerData[0].email+ ":";
