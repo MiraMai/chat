@@ -102,6 +102,9 @@ window.addEventListener('load', function() { // Windows load
                 img.setAttribute('src', user.providerData[0].photoURL);
                 loggedinName.appendChild(img);
                 
+                 
+                tdName.innerHTML = user.providerData[0].email+ ":";
+ 
                 loggedinName.innerHTML = "Logged in as " + user.providerData[0].email + user.providerData[0].displayName;
                 usernameInput.style.display = "none";
                 githbLogin.style.display = "none";
