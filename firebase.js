@@ -155,6 +155,8 @@ window.addEventListener('load', function() { // Windows load
                  console.log(user.providerData[0].photoURL);
                  
                let img = document.createElement('img');
+                 img.style.width = '10px';
+                 img.style.height = '10px';
                 img.setAttribute('src', user.providerData[0].photoURL);
                 pic.appendChild(img);
                 
