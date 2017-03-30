@@ -114,29 +114,8 @@ window.addEventListener('load', function() { // Windows load
                 if(user.email === 'mira.aeridou@gmail.com') {
                      admin.disabled = false;
 
-                };
- 
-                 
-                 // skapar en table   
-                    let tr = document.createElement('tr');
-                    let tdName = document.createElement('td');
-                    let tdMessage = document.createElement('td');
-                    let tdTime = document.createElement('td');  
-                     
-                     // set the content of the table 
-              //        tr.id = key;
-                      tdName.innerHTML = user.providerData[0].email+ ":";
-                      tdMessage.innerHTML = o.message;
-                      tdTime.innerHTML = o.time;
-                        
-                     // push the content to the table   
-                      chat.insertBefore(tr, chat.firstChild);
-                      tr.appendChild(tdName);
-                      tr.appendChild(tdMessage);
-                      tr.appendChild(tdTime);                       
-                
-                 
-                 
+                }                 
+                 loginFunction();
                });  
     
 });
