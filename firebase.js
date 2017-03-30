@@ -13,7 +13,6 @@ window.addEventListener('load', function() { // Windows load
     let admin = document.getElementById('admin');
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
-    let logoutGithub = document.getElementById('logoutGithub');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
