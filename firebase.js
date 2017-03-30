@@ -97,7 +97,7 @@ window.addEventListener('load', function() { // Windows load
                 let img = document.createElement('img');
                 img.setAttribute('src', user.providerData[0].photoURL);
                 loggedinName.appendChild(img);
-                tdName.innerHTML = user.email + ":"; 
+//                tdName.innerHTML = user.email + ":"; 
                 
                 loggedinName.innerHTML = "Logged in as " + user.providerData[0].email + user.providerData[0].displayName;
                 usernameInput.style.display = "none";
