@@ -23,7 +23,7 @@ window.addEventListener('load', function() { // Windows load
              firebase.auth().signInWithPopup(provider)
                  .then(function(result) {
 	             // Om autentisering lyckas, så finns användarinfo i user
-	              let user = result.user;
+	             let user = result.user;
                  console.log(user);
                  console.log(user.email);
                  console.log(user.displayName);
