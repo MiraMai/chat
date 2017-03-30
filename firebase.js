@@ -94,10 +94,10 @@ window.addEventListener('load', function() { // Windows load
                  console.log(user.providerData[0].displayName);
                  console.log(user.providerData[0].photoURL);
                  
-                let img = document.createElement('img');
+               /* let img = document.createElement('img');
                 img.setAttribute('src', user.providerData[0].photoURL);
                 loggedinName.appendChild(img);
-                
+                */
                  
                 tdName.innerHTML = user.providerData[0].email+ ":";
  
@@ -117,7 +117,6 @@ window.addEventListener('load', function() { // Windows load
                 };
  
                  
-                 loginFunction();
                  
                });  
     
