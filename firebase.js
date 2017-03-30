@@ -148,7 +148,7 @@ window.addEventListener('load', function() { // Windows load
                  .then(function(result) {
 	             // Om autentisering lyckas, så finns användarinfo i user
 	              let user = result.user;
-                  localStorage.setItem('username',user.providerData[0].email);                 // ändra så att send message hämtar från localstorage i stället för inputName
+                  localStorage.setItem('username',user.providerData[0].displayName);                 // ändra så att send message hämtar från localstorage i stället för inputName
                  console.log(user);
                  console.log(user.providerData[0].email);
                  console.log(user.providerData[0].displayName);
