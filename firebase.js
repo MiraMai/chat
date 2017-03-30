@@ -185,6 +185,7 @@ window.addEventListener('load', function() { // Windows load
                 firebase.auth().signOut()
                 .then(function(result) {
 	         console.log('Utloggning lyckades');
+                localStorage.clear();
 //                localStorage.removeItem('username',user.providerData[0].email);   
                 usernameInput.style.display = "inline";
                 loginbtn.style.display = "inline";
