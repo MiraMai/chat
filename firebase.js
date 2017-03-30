@@ -110,7 +110,7 @@ window.addEventListener('load', function() { // Windows load
                 logoutGithub.style.display = "inline";
                  
                 if(user.email === 'mira.aeridou@gmail.com') {
-                     admin.disabled = true;
+                     admin.disabled = false;
 
                 };
  

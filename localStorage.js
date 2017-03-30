@@ -32,7 +32,7 @@
                 send.style.display = "inline";
             
             if(usernameInput.value === 'Mira') {
-                admin.disabled = true;
+                admin.disabled = false;
 
             };
             
