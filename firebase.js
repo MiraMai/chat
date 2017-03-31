@@ -217,7 +217,7 @@ window.addEventListener('load', function() { // Windows load
             .on('value', function(snapshot) {
                 snapshot.forEach( child => {
                     let objekt = child.val();  // objekten kommer i ordning
-	}
+	})
 });
 
     });    
