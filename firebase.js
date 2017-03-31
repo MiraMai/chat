@@ -223,6 +223,7 @@ window.addEventListener('load', function() { // Windows load
                     console.log(child.val());
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
+                    send.style.display = "none";
                     
                     // skapar en table   
                     let tr = document.createElement('tr');
