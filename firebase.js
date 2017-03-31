@@ -14,10 +14,12 @@ window.addEventListener('load', function() { // Windows load
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
     let pic = document.getElementById('pic');
+    let sort = document.getElementById('sort');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
+    sort.style.display = "none";
     admin.disabled = true;
     
     
@@ -36,6 +38,7 @@ window.addEventListener('load', function() { // Windows load
                 logoutbtn.style.display = "inline";
                 message.style.display = "inline";
                 send.style.display = "inline";
+                sort.style.display = "inline";
             
             if(usernameInput.value === 'Mira') {
                 admin.disabled = false;
@@ -82,7 +85,7 @@ window.addEventListener('load', function() { // Windows load
              }              
     
                 
-   // när man klickar på send button skapar man ett object med egenskaperna nedan         
+   // när man klickar på send button skapar man ett object med egenskaperna nedan och skickar det till firebase         
      send.addEventListener('click', function(meddelande){
                         
                   chat.innerHTML = "";
@@ -172,6 +175,7 @@ window.addEventListener('load', function() { // Windows load
                         message.style.display = "inline";
                         send.style.display = "inline";
                         logoutGithub.style.display = "inline";
+                        sort.style.display = "inline";
                  
                 if(user.email === 'mira.aeridou@gmail.com') {
                      admin.disabled = false;
@@ -200,7 +204,7 @@ window.addEventListener('load', function() { // Windows load
                 window.location.reload();             
                     })
                 .catch(function(error) {
-	         console.log('Utloggning misslyckades');
+	              console.log('Utloggning misslyckades');
                 });
 
         });
