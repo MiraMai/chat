@@ -228,7 +228,7 @@ window.addEventListener('load', function() { // Windows load
                     let tdTime = document.createElement('td');  
                      
                      // set the content of the table 
-                      tr.id = key;
+                 
                       tdName.innerHTML = o.name+ ":";
                       tdMessage.innerHTML = o.message;
                       tdTime.innerHTML = o.time;
