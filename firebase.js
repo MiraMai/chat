@@ -209,5 +209,19 @@ window.addEventListener('load', function() { // Windows load
 
         });
 //************************************************
+//************ sort btn ***************************
+    sort.addEventListener('click', function () {
+        
+        let sortbtn = firebase.database();
+            sortbtn.ref('inputMessage/').orderByChild('name')
+            .on('value', function(snapshot) {
+                snapshot.forEach( child => {
+                    let objekt = child.val();  // objekten kommer i ordning
+	}
+});
+
+    });    
 
                 });// windows load
+    
+    
