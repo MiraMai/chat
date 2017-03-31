@@ -15,11 +15,13 @@ window.addEventListener('load', function() { // Windows load
     let chat = document.getElementById('chat');
     let pic = document.getElementById('pic');
     let sort = document.getElementById('sort');
+    let sortByNameChat = document.getElementById('sortByNameChat');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
     sort.style.display = "none";
+    sortByNameChat.style.display = "none";
     admin.disabled = true;
     
     
@@ -220,6 +222,7 @@ window.addEventListener('load', function() { // Windows load
                     
                     console.log(child.val());
                     chat.style.display = "none";
+                    sortByNameChat.style.display = "inline";
                     
                     // skapar en table   
                     let tr = document.createElement('tr');
@@ -229,9 +232,9 @@ window.addEventListener('load', function() { // Windows load
                      
                      // set the content of the table 
                  
-                      tdName.innerHTML = o.name+ ":";
-                      tdMessage.innerHTML = o.message;
-                      tdTime.innerHTML = o.time;
+                      tdName.innerHTML = objekt.name+ ":";
+                      tdMessage.innerHTML = objekt.message;
+                      tdTime.innerHTML = objekt.time;
                         
                      // push the content to the table   
                       chat.insertBefore(tr, chat.firstChild);
