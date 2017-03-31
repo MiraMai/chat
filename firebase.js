@@ -218,9 +218,27 @@ window.addEventListener('load', function() { // Windows load
                 snapshot.forEach( child => {
                     let objekt = child.val();  // objekten kommer i ordning
                     
-                    console.log(sortbtn);
                     console.log(child.val());
                     chat.style.display = "none";
+                    
+                    // skapar en table   
+                    let tr = document.createElement('tr');
+                    let tdName = document.createElement('td');
+                    let tdMessage = document.createElement('td');
+                    let tdTime = document.createElement('td');  
+                     
+                     // set the content of the table 
+                      tr.id = key;
+                      tdName.innerHTML = o.name+ ":";
+                      tdMessage.innerHTML = o.message;
+                      tdTime.innerHTML = o.time;
+                        
+                     // push the content to the table   
+                      chat.insertBefore(tr, chat.firstChild);
+                      tr.appendChild(tdName);
+                      tr.appendChild(tdMessage);
+                      tr.appendChild(tdTime);                       
+                
 	})
 });
 
