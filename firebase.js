@@ -218,6 +218,8 @@ window.addEventListener('load', function() { // Windows load
                 snapshot.forEach( child => {
                     let objekt = child.val();  // objekten kommer i ordning
                     
+                    
+                    console.log(child.val());
                     chat.style.display = "none";
 	})
 });
