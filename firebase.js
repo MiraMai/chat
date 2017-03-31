@@ -7,6 +7,7 @@ window.addEventListener('load', function() { // Windows load
     let loginbtn = document.getElementById('loginbtn');
     let logoutbtn = document.getElementById('logoutbtn');
     let send = document.getElementById('send');
+    let sortNameSendbtn = document.getElementById('sortNameSendbtn');
     let or = document.getElementById('or');
     let loggedinName = document.getElementById('loggedinName');
     let logoutGithub = document.getElementById('logoutGithub');
@@ -22,6 +23,7 @@ window.addEventListener('load', function() { // Windows load
     send.style.display = "none";
     sort.style.display = "none";
     sortByNameChat.style.display = "none";
+    sortNameSendbtn.style.display = "none";
     admin.disabled = true;
     
     
@@ -224,6 +226,8 @@ window.addEventListener('load', function() { // Windows load
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
                     send.style.display = "none";
+                    sortNameSendbtn.style.display = "inline";
+                    
                     
                     // skapar en table   
                     let tr = document.createElement('tr');
