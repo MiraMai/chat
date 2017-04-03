@@ -281,6 +281,7 @@ localStorage.setItem('username', usernameInput.value);
     });    
     
     sortNameSendbtn.addEventListener('click', function() {
+        chat.innerHTML = "";
         loginFunction();
 //        sendBtnFunc();
         
