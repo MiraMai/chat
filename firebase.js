@@ -90,7 +90,7 @@ window.addEventListener('load', function() { // Windows load
     
                 
    // när man klickar på send button skapar man ett object med egenskaperna nedan och skickar det till firebase         
-     send.addEventListener('click', function(meddelande){
+     let sendBtnFunc = function(meddelande){
                         
                   chat.innerHTML = "";
                   let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
@@ -102,7 +102,13 @@ window.addEventListener('load', function() { // Windows load
                     message.value = "";
                     
                 });
+    send.addEventListener('click', sendBtnFunc)
 
+    sortNameSendbtn.addEventListener('click', function() {
+        sendBtnFunc();
+    
+    });    
+    
  // show firebase content in table element
 
         let loginFunction = function () {                   
