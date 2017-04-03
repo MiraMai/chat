@@ -98,7 +98,7 @@ window.addEventListener('load', function() { // Windows load
 					    name: localStorage.getItem('username'),
                         message: message.value,
                         time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
-            
+                         ref.child('inputMessage/').remove();
                 })
                     message.value = "";
                     
@@ -121,8 +121,7 @@ window.addEventListener('load', function() { // Windows load
                         let o = dataObject[i];*/
 //                        console.log(dataObject);
 //                        console.log(dataObject[i].message);
-                     
-                     
+
                    // skapar en table   
                     let tr = document.createElement('tr');
                     let tdName = document.createElement('td');
@@ -264,9 +263,7 @@ window.addEventListener('load', function() { // Windows load
         
     });
     
-            let del = firebase.database();
-               del.ref('inputMessage/' + 'Kgnz1AllUQzJFRPgWlj').remove();
-
+            
 
 
                 });// windows load
