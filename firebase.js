@@ -252,7 +252,7 @@ window.addEventListener('load', function() { // Windows load
                       tr.appendChild(tdTime);   
                     
                     
-                    if(send.addEventListener('click', sendBtnFunc) == true) {
+                    if(send.addEventListener('click', sendBtnFunc);) {
                         loginFunction();
                     }
                 
