@@ -194,7 +194,7 @@ window.addEventListener('load', function() { // Windows load
 });
     
 //***************** log out with github*****************
-    logoutGithub.addEventListener('click', function() {
+     let logoutFunct = function() {
         // Logga ut den autentiserade användaren
                 firebase.auth().signOut()
                 .then(function(result) {
@@ -214,7 +214,8 @@ window.addEventListener('load', function() { // Windows load
 	              console.log('Utloggning misslyckades');
                 });
 
-        });
+        };
+    logoutGithub.addEventListener('click', logoutFunct);
 //************************************************
 //************ sort btn ***************************
     sort.addEventListener('click', function () {
@@ -252,7 +253,7 @@ window.addEventListener('load', function() { // Windows load
                     
                     
                     if(sendBtnFunc == true) {
-                        sendBtnFunc();
+                        loginFunction();
                     }
                 
 	})
