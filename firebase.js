@@ -104,13 +104,6 @@ window.addEventListener('load', function() { // Windows load
                 }
     send.addEventListener('click', sendBtnFunc);
     
-// send button som bara visas när man redan har sorterat. <<skickar meddelandet och återställer chatten som vanligt
- sortNameSendbtn.addEventListener('click', function() {
-        loginFunction();  //återställer chatten
-        sendBtnFunc();    // skickar medeelandet        
-        
-    });    
-    
 //removes all the messages
 //             ref.ref('inputMessage/').remove();
 
@@ -266,7 +259,12 @@ window.addEventListener('load', function() { // Windows load
 
     });    
     
-   
+    sortNameSendbtn.addEventListener('click', function() {
+        loginFunction();
+        sendBtnFunc();
+        
+        
+    });
     
             
 
