@@ -252,7 +252,7 @@ window.addEventListener('load', function() { // Windows load
                       tdTime.innerHTML = objekt.time;
                         
                      // push the content to the table   
-                      chat.appendChild(tr);
+                      sortByNameChat.appendChild(tr);
                       tr.appendChild(tdName);
                       tr.appendChild(tdMessage);
                       tr.appendChild(tdTime);   
