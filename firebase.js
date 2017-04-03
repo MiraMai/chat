@@ -15,13 +15,15 @@ window.addEventListener('load', function() { // Windows load
     let message = document.getElementById('message');
     let chat = document.getElementById('chat');
     let pic = document.getElementById('pic');
-    let sort = document.getElementById('sort');
+    let sortByName = document.getElementById('sortByName');
     let sortByNameChat = document.getElementById('sortByNameChat');
+    let sortByTime = document.getElementById('sortByTime');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
-    sort.style.display = "none";
+    sortByName.style.display = "none";
+    sortByTime.style.display = "none";
     sortByNameChat.style.display = "none";
     sortNameSendbtn.style.display = "none";
     admin.disabled = true;
@@ -42,7 +44,8 @@ window.addEventListener('load', function() { // Windows load
                 logoutbtn.style.display = "inline";
                 message.style.display = "inline";
                 send.style.display = "inline";
-                sort.style.display = "inline";
+                sortByName.style.display = "inline";
+                sortByTime.style.display = "inline";
             
             if(usernameInput.value === 'Mira') {
                 admin.disabled = false;
@@ -110,29 +113,7 @@ window.addEventListener('load', function() { // Windows load
  // show firebase content in table element
 
         let loginFunction = function () {  
-
-/*
-localStorage.setItem('username', usernameInput.value);
-                console.log(localStorage.getItem('username'));
-                loggedinName.innerHTML = "Logged in as " + usernameInput.value;
-                usernameInput.style.display = "none";
-                loginbtn.style.display = "none";
-                or.style.display = "none";
-                githbLogin.style.display = "none";
-                logoutGithub.style.display = "none";
-                logoutbtn.style.display = "inline";
-                message.style.display = "inline";
-                send.style.display = "inline";
-                sort.style.display = "inline";
-            
-            if(usernameInput.value === 'Mira') {
-                admin.disabled = false;
-
-            };
-            
-*/
-
-                 
+             
 
              firebase.database().ref('inputMessage/').on('value', function(snapshot) {
 // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
@@ -210,7 +191,8 @@ localStorage.setItem('username', usernameInput.value);
                 if(user.email === 'mira.aeridou@gmail.com') {
                      admin.disabled = false;
 
-                }                 
+                }      
+                   // to show the chat         
                      loginFunction();
                });  
             
@@ -240,8 +222,8 @@ localStorage.setItem('username', usernameInput.value);
         };
     logoutGithub.addEventListener('click', logoutFunct);
 //************************************************
-//************ sort btn ***************************
-    sort.addEventListener('click', function () {
+//************ sortbyname btn ***************************
+    sortByName.addEventListener('click', function () {
         
         let sortbtn = firebase.database();
             sortbtn.ref('inputMessage/').orderByChild('name')
@@ -252,6 +234,7 @@ localStorage.setItem('username', usernameInput.value);
                     console.log(child.val());
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
+                    sortByTime.style.display = "inline";
                     send.style.display = "none";
                     sortNameSendbtn.style.display = "inline";
                     
@@ -269,7 +252,7 @@ localStorage.setItem('username', usernameInput.value);
                       tdTime.innerHTML = objekt.time;
                         
                      // push the content to the table   
-                      sortByNameChat.appendChild(tr);
+                      chat.appendChild(tr);
                       tr.appendChild(tdName);
                       tr.appendChild(tdMessage);
                       tr.appendChild(tdTime);   
@@ -282,7 +265,7 @@ localStorage.setItem('username', usernameInput.value);
 
     });    
     
-    sortNameSendbtn.addEventListener('click', function() {
+   /* sortNameSendbtn.addEventListener('click', function() {
         chat.innerHTML = "";
         loginFunction();
         chat.innerHTML = "";
@@ -290,7 +273,7 @@ localStorage.setItem('username', usernameInput.value);
         
         
     });
-    
+    */
             
 
 
