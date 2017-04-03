@@ -103,8 +103,9 @@ window.addEventListener('load', function() { // Windows load
                     
                 }
     send.addEventListener('click', sendBtnFunc);
-
-             ref.ref('inputMessage/').remove();
+    
+//removes all the messages
+//             ref.ref('inputMessage/').remove();
 
  // show firebase content in table element
 
