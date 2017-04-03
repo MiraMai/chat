@@ -261,7 +261,7 @@ window.addEventListener('load', function() { // Windows load
     
     sortNameSendbtn.addEventListener('click', function() {
         loginFunction();
-        sendBtnFunc();
+//        sendBtnFunc();
         
         
     });
