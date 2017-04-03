@@ -90,22 +90,22 @@ window.addEventListener('load', function() { // Windows load
     
                 
    // när man klickar på send button skapar man ett object med egenskaperna nedan och skickar det till firebase         
-     
+       let ref = firebase.database();
     let sendBtnFunc = function(meddelande){
                         
                   chat.innerHTML = "";
-                  let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
+                  ref.ref('inputMessage/' /*+ usernameInput.value*/).push({
 					    name: localStorage.getItem('username'),
                         message: message.value,
                         time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
-                         ref.child('inputMessage/').remove();
                 })
                     message.value = "";
                     
                 }
     send.addEventListener('click', sendBtnFunc);
 
-    
+             ref.child('inputMessage/').remove();
+
  // show firebase content in table element
 
         let loginFunction = function () {                   
