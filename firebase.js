@@ -1,29 +1,37 @@
 window.addEventListener('load', function() { // Windows load
           
-// hämtar alla element                   
-    var usernameInput = document.getElementById('username');     
+// hämtar alla element
     
+// inputs    
+    var usernameInput = document.getElementById('username');
+    let message = document.getElementById('message');
     
+// buttons    
     let loginbtn = document.getElementById('loginbtn');
     let logoutbtn = document.getElementById('logoutbtn');
     let send = document.getElementById('send');
     let sortNameSendbtn = document.getElementById('sortNameSendbtn');
-    let or = document.getElementById('or');
-    let loggedinName = document.getElementById('loggedinName');
     let logoutGithub = document.getElementById('logoutGithub');
     let admin = document.getElementById('admin');
-    let message = document.getElementById('message');
-    let chat = document.getElementById('chat');
-    let pic = document.getElementById('pic');
     let sortByName = document.getElementById('sortByName');
+   
+// text elements    
+    let or = document.getElementById('or');
+    let loggedinName = document.getElementById('loggedinName');
+    
+// media ekement    
+    let pic = document.getElementById('pic');
+    
+// tables
+    let chat = document.getElementById('chat');
     let sortByNameChat = document.getElementById('sortByNameChat');
-    let sortByTime = document.getElementById('sortByTime');
+    
+//  buttons visibility     
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
     sortByName.style.display = "none";
-    sortByTime.style.display = "none";
     sortByNameChat.style.display = "none";
     sortNameSendbtn.style.display = "none";
     admin.disabled = true;
@@ -45,7 +53,6 @@ window.addEventListener('load', function() { // Windows load
                 message.style.display = "inline";
                 send.style.display = "inline";
                 sortByName.style.display = "inline";
-                sortByTime.style.display = "inline";
             
             if(usernameInput.value === 'Mira') {
                 admin.disabled = false;
@@ -234,7 +241,6 @@ window.addEventListener('load', function() { // Windows load
                     console.log(child.val());
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
-                    sortByTime.style.display = "inline";
                     send.style.display = "none";
                     sortNameSendbtn.style.display = "inline";
                     
