@@ -1,37 +1,27 @@
 window.addEventListener('load', function() { // Windows load
           
-// hämtar alla element
+// hämtar alla element                   
+    var usernameInput = document.getElementById('username');     
     
-// inputs    
-    var usernameInput = document.getElementById('username');
-    let message = document.getElementById('message');
     
-// buttons    
     let loginbtn = document.getElementById('loginbtn');
     let logoutbtn = document.getElementById('logoutbtn');
     let send = document.getElementById('send');
     let sortNameSendbtn = document.getElementById('sortNameSendbtn');
-    let logoutGithub = document.getElementById('logoutGithub');
-    let admin = document.getElementById('admin');
-    let sortByName = document.getElementById('sortByName');
-   
-// text elements    
     let or = document.getElementById('or');
     let loggedinName = document.getElementById('loggedinName');
-    
-// media ekement    
-    let pic = document.getElementById('pic');
-    
-// tables
+    let logoutGithub = document.getElementById('logoutGithub');
+    let admin = document.getElementById('admin');
+    let message = document.getElementById('message');
     let chat = document.getElementById('chat');
+    let pic = document.getElementById('pic');
+    let sort = document.getElementById('sort');
     let sortByNameChat = document.getElementById('sortByNameChat');
-    
-//  buttons visibility     
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
-    sortByName.style.display = "none";
+    sort.style.display = "none";
     sortByNameChat.style.display = "none";
     sortNameSendbtn.style.display = "none";
     admin.disabled = true;
@@ -52,7 +42,7 @@ window.addEventListener('load', function() { // Windows load
                 logoutbtn.style.display = "inline";
                 message.style.display = "inline";
                 send.style.display = "inline";
-                sortByName.style.display = "inline";
+                sort.style.display = "inline";
             
             if(usernameInput.value === 'Mira') {
                 admin.disabled = false;
@@ -100,27 +90,22 @@ window.addEventListener('load', function() { // Windows load
     
                 
    // när man klickar på send button skapar man ett object med egenskaperna nedan och skickar det till firebase         
-       let ref = firebase.database();
-    let sendBtnFunc = function(meddelande){
+     send.addEventListener('click', function(meddelande){
                         
                   chat.innerHTML = "";
-                  ref.ref('inputMessage/' /*+ usernameInput.value*/).push({
+                  let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
 					    name: localStorage.getItem('username'),
                         message: message.value,
                         time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
+            
                 })
                     message.value = "";
                     
-                }
-    send.addEventListener('click', sendBtnFunc);
-    
-//removes all the messages
-//             ref.ref('inputMessage/').remove();
+                });
 
  // show firebase content in table element
 
-        let loginFunction = function () {  
-             
+        let loginFunction = function () {                   
 
              firebase.database().ref('inputMessage/').on('value', function(snapshot) {
 // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
@@ -133,7 +118,8 @@ window.addEventListener('load', function() { // Windows load
                         let o = dataObject[i];*/
 //                        console.log(dataObject);
 //                        console.log(dataObject[i].message);
-
+                     
+                     
                    // skapar en table   
                     let tr = document.createElement('tr');
                     let tdName = document.createElement('td');
@@ -198,15 +184,14 @@ window.addEventListener('load', function() { // Windows load
                 if(user.email === 'mira.aeridou@gmail.com') {
                      admin.disabled = false;
 
-                }      
-                   // to show the chat         
+                }                 
                      loginFunction();
                });  
             
 });
     
 //***************** log out with github*****************
-     let logoutFunct = function() {
+    logoutGithub.addEventListener('click', function() {
         // Logga ut den autentiserade användaren
                 firebase.auth().signOut()
                 .then(function(result) {
@@ -226,11 +211,10 @@ window.addEventListener('load', function() { // Windows load
 	              console.log('Utloggning misslyckades');
                 });
 
-        };
-    logoutGithub.addEventListener('click', logoutFunct);
+        });
 //************************************************
-//************ sortbyname btn ***************************
-    sortByName.addEventListener('click', function () {
+//************ sort btn ***************************
+    sort.addEventListener('click', function () {
         
         let sortbtn = firebase.database();
             sortbtn.ref('inputMessage/').orderByChild('name')
@@ -261,28 +245,11 @@ window.addEventListener('load', function() { // Windows load
                       sortByNameChat.appendChild(tr);
                       tr.appendChild(tdName);
                       tr.appendChild(tdMessage);
-                      tr.appendChild(tdTime);   
-                    
-                    
-                    
+                      tr.appendChild(tdTime);                       
                 
 	})
 });
 
     });    
-    
-   /* sortNameSendbtn.addEventListener('click', function() {
-        chat.innerHTML = "";
-        loginFunction();
-        chat.innerHTML = "";
-        sendBtnFunc();
-        
-        
-    });
-    */
-            
-
 
                 });// windows load
-    
-    
