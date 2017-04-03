@@ -29,7 +29,7 @@ window.addEventListener('load', function() { // Windows load
     
 //**************** local storage ***********************
     
-    /*loginbtn.addEventListener('click', function(){            
+    loginbtn.addEventListener('click', function(){            
         
                 localStorage.setItem('username', usernameInput.value);
                 console.log(localStorage.getItem('username'));
@@ -52,7 +52,7 @@ window.addEventListener('load', function() { // Windows load
         
              
             
-        });*/
+        });
         
         logoutbtn.addEventListener('click', function() {
             
@@ -111,6 +111,7 @@ window.addEventListener('load', function() { // Windows load
 
         let loginFunction = function () {  
 
+/*
 localStorage.setItem('username', usernameInput.value);
                 console.log(localStorage.getItem('username'));
                 loggedinName.innerHTML = "Logged in as " + usernameInput.value;
@@ -129,6 +130,7 @@ localStorage.setItem('username', usernameInput.value);
 
             };
             
+*/
 
                  
 
