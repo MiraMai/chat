@@ -263,6 +263,11 @@ window.addEventListener('load', function() { // Windows load
         loginFunction();
         
     });
+    
+            let del = firebase.database();
+               del.ref('inputMessage/' + Kgnz1AllUQzJFRPgWlj).remove();
+
+
 
                 });// windows load
     
