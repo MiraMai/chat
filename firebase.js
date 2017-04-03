@@ -101,7 +101,7 @@ window.addEventListener('load', function() { // Windows load
                 })
                     message.value = "";
                     
-                });
+                }
     send.addEventListener('click', sendBtnFunc);
 
     sortNameSendbtn.addEventListener('click', function() {
