@@ -252,14 +252,17 @@ window.addEventListener('load', function() { // Windows load
                       tr.appendChild(tdTime);   
                     
                     
-                    if(sendBtnFunc()) {
-                        loginFunction();
-                    }
+                    
                 
 	})
 });
 
     });    
+    
+    sortNameSendbtn.addEventListener('click', function() {
+        loginFunction();
+        
+    });
 
                 });// windows load
     
