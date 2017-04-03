@@ -29,7 +29,7 @@ window.addEventListener('load', function() { // Windows load
     
 //**************** local storage ***********************
     
-    loginbtn.addEventListener('click', function(){            
+    /*loginbtn.addEventListener('click', function(){            
         
                 localStorage.setItem('username', usernameInput.value);
                 console.log(localStorage.getItem('username'));
@@ -52,7 +52,7 @@ window.addEventListener('load', function() { // Windows load
         
              
             
-        });
+        });*/
         
         logoutbtn.addEventListener('click', function() {
             
@@ -109,7 +109,28 @@ window.addEventListener('load', function() { // Windows load
 
  // show firebase content in table element
 
-        let loginFunction = function () {                   
+        let loginFunction = function () {  
+
+localStorage.setItem('username', usernameInput.value);
+                console.log(localStorage.getItem('username'));
+                loggedinName.innerHTML = "Logged in as " + usernameInput.value;
+                usernameInput.style.display = "none";
+                loginbtn.style.display = "none";
+                or.style.display = "none";
+                githbLogin.style.display = "none";
+                logoutGithub.style.display = "none";
+                logoutbtn.style.display = "inline";
+                message.style.display = "inline";
+                send.style.display = "inline";
+                sort.style.display = "inline";
+            
+            if(usernameInput.value === 'Mira') {
+                admin.disabled = false;
+
+            };
+            
+
+                 
 
              firebase.database().ref('inputMessage/').on('value', function(snapshot) {
 // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
