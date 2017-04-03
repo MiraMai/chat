@@ -265,7 +265,7 @@ window.addEventListener('load', function() { // Windows load
     });
     
             let del = firebase.database();
-               del.ref('inputMessage/' + Kgnz1AllUQzJFRPgWlj).remove();
+               del.ref('inputMessage/' + 'Kgnz1AllUQzJFRPgWlj').remove();
 
 
 
