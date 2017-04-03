@@ -228,7 +228,7 @@ window.addEventListener('load', function() { // Windows load
                     console.log(child.val());
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
-                    send.style.display = "none";
+//                    send.style.display = "none";
                     sortNameSendbtn.style.display = "inline";
                     
                     
