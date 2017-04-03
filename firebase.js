@@ -90,7 +90,8 @@ window.addEventListener('load', function() { // Windows load
     
                 
    // när man klickar på send button skapar man ett object med egenskaperna nedan och skickar det till firebase         
-     let sendBtnFunc = function(meddelande){
+     
+    let sendBtnFunc = function(meddelande){
                         
                   chat.innerHTML = "";
                   let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
@@ -104,10 +105,6 @@ window.addEventListener('load', function() { // Windows load
                 }
     send.addEventListener('click', sendBtnFunc);
 
-    sortNameSendbtn.addEventListener('click', function() {
-        sendBtnFunc();
-    
-    });    
     
  // show firebase content in table element
 
@@ -231,7 +228,7 @@ window.addEventListener('load', function() { // Windows load
                     console.log(child.val());
                     chat.style.display = "none";
                     sortByNameChat.style.display = "inline";
-//                    send.style.display = "none";
+                    send.style.display = "none";
                     sortNameSendbtn.style.display = "inline";
                     
                     
@@ -251,7 +248,12 @@ window.addEventListener('load', function() { // Windows load
                       sortByNameChat.appendChild(tr);
                       tr.appendChild(tdName);
                       tr.appendChild(tdMessage);
-                      tr.appendChild(tdTime);                       
+                      tr.appendChild(tdTime);   
+                    
+                    
+                    if(sendBtnFunc == true) {
+                        sendBtnFunc();
+                    }
                 
 	})
 });
