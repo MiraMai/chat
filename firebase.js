@@ -132,9 +132,13 @@ window.addEventListener('load', function() { // Windows load
         tr.appendChild(tdMessage);
         tr.appendChild(tdTime);        
     }
+    firebase.database().ref('inputMessage/').on('value', function(snapshot) {
+        // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
+        snapshot.forEach(addAndShowElement);  // snapshot foreach
+    })
     let fetchMessagesAndDisplayThem = function () {                   
 
-        firebase.database().ref('inputMessage/').on('value', function(snapshot) {
+        firebase.database().ref('inputMessage/').once('value', function(snapshot) {
             // använder den här funktionen istället för forloopen nedanför för att kunna komma åt child.key
             snapshot.forEach(addAndShowElement);  // snapshot foreach
         })
@@ -238,7 +242,7 @@ window.addEventListener('load', function() { // Windows load
                 tdMessage.innerHTML = objekt.message;
                 tdTime.innerHTML = objekt.time;
 
-                // push the content to the table   
+                // puh the content to the table   
                 chat.appendChild(tr);
                 tr.appendChild(tdName);
                 tr.appendChild(tdMessage);
