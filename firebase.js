@@ -219,7 +219,6 @@ window.addEventListener('load', function() { // Windows load
                 let objekt = child.val();  // objekten kommer i ordning
 
                 console.log(child.val());
-                chat.style.display = "none";
                 //sortByNameChat.style.display = "inline";
                 send.style.display = "inline";
 
@@ -255,7 +254,7 @@ window.addEventListener('load', function() { // Windows load
                 
     });
     
-     sortByValue.addEventListener('click', function () {
+    /* sortByValue.addEventListener('click', function () {
               let sortByValuebtn = firebase.database();
             sortByValuebtn.ref('inputMessage/').orderByValue('name')
             .on('value', function(snapshot) {
@@ -291,7 +290,7 @@ window.addEventListener('load', function() { // Windows load
 });
 
     });   
-    
+    */
   //removes all the messageslet ref = firebase.databas()
     /*let ref = firebase.database();
              ref.ref('inputMessage/').remove();*/
