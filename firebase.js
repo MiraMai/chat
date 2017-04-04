@@ -291,6 +291,8 @@ window.addEventListener('load', function() { // Windows load
 
     });   
     
-         
+  //removes all the messages
+             ref.ref('inputMessage/').remove();
+       
 
                 });// windows load
