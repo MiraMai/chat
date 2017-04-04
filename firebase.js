@@ -250,8 +250,9 @@ window.addEventListener('load', function() { // Windows load
     }); 
     
     backToNormal.addEventListener('click', function() {
-                fetchMessagesAndDisplayThem();
-        
+                chat.style.display = "inline";
+                sortByNameChat.style.display = "none";
+                
     });
     
   /*   sortByValue.addEventListener('click', function () {
