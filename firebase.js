@@ -291,7 +291,8 @@ window.addEventListener('load', function() { // Windows load
 
     });   
     
-  //removes all the messages
+  //removes all the messageslet ref = firebase.databas()
+    let ref = firebase.databas();
              ref.ref('inputMessage/').remove();
        
 
