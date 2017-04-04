@@ -91,6 +91,7 @@ window.addEventListener('load', function() { // Windows load
     send.addEventListener('click', function(meddelande){
                         
         chat.innerHTML = "";
+        console.log('Vi är i send funct');
         let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
             name: localStorage.getItem('username'),
             message: message.value,
@@ -215,6 +216,8 @@ window.addEventListener('load', function() { // Windows load
         let sortbtn = firebase.database();
         sortbtn.ref('inputMessage/').orderByChild('name')
         .on('value', function(snapshot) {
+            chat.innerHTML = "";
+            console.log ('Vi är i sort functionen och tabellen är tom');
             snapshot.forEach( child => {
                 let objekt = child.val();  // objekten kommer i ordning
 
