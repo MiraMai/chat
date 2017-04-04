@@ -129,11 +129,11 @@ window.addEventListener('load', function() { // Windows load
 //                        console.log(dataObject[i].message);
                      
                      
-                   /*// skapar en table   
+                   // skapar en table   
                     let tr = document.createElement('tr');
                     let tdName = document.createElement('td');
                     let tdMessage = document.createElement('td');
-                    let tdTime = document.createElement('td');  */
+                    let tdTime = document.createElement('td');  
                      
                      // set the content of the table 
                       tr.id = key;
