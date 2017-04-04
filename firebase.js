@@ -289,9 +289,9 @@ window.addEventListener('load', function() { // Windows load
 	})
 });
 
-    });*/   
+    });   
     
          
-     });
+     });*/
 
                 });// windows load
