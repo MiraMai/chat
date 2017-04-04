@@ -215,7 +215,7 @@ window.addEventListener('load', function() { // Windows load
         
         let sortbtn = firebase.database();
         sortbtn.ref('inputMessage/').orderByChild('name')
-        .on('value', function(snapshot) {
+        .once('value', function(snapshot) {
             chat.innerHTML = "";
             console.log ('Vi är i sort functionen och tabellen är tom');
             snapshot.forEach( child => {
