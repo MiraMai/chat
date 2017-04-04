@@ -247,6 +247,7 @@ window.addEventListener('load', function() { // Windows load
     }); 
     
     backToNormal.addEventListener('click', function() {
+                chat.innerHTML = "";
                 chat.style.display = "inline";
                 sortByNameChat.style.display = "none";
         
