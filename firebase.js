@@ -15,15 +15,15 @@ window.addEventListener('load', function() { // Windows load
     let chat = document.getElementById('chat');
     let pic = document.getElementById('pic');
     let sort = document.getElementById('sort');
-    let sortByNameChat = document.getElementById('sortByNameChat');
-    let sortByValue = document.getElementById('sortByValue');
+    //let sortByNameChat = document.getElementById('sortByNameChat');
+    //let sortByValue = document.getElementById('sortByValue');
     let backToNormal = document.getElementById('backToNormal');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
     send.style.display = "none";
     sort.style.display = "none";
-    sortByNameChat.style.display = "none";
+    //sortByNameChat.style.display = "none";
     admin.disabled = true;
     
 
@@ -220,7 +220,7 @@ window.addEventListener('load', function() { // Windows load
 
                 console.log(child.val());
                 chat.style.display = "none";
-                sortByNameChat.style.display = "inline";
+                //sortByNameChat.style.display = "inline";
                 send.style.display = "inline";
 
 
@@ -237,7 +237,7 @@ window.addEventListener('load', function() { // Windows load
                 tdTime.innerHTML = objekt.time;
 
                 // push the content to the table   
-                sortByNameChat.appendChild(tr);
+                chat.appendChild(tr);
                 tr.appendChild(tdName);
                 tr.appendChild(tdMessage);
                 tr.appendChild(tdTime);                       
@@ -249,7 +249,7 @@ window.addEventListener('load', function() { // Windows load
     backToNormal.addEventListener('click', function() {
                 chat.innerHTML = "";
                 chat.style.display = "inline";
-                sortByNameChat.style.display = "none";
+                //sortByNameChat.style.display = "none";
         
                 fetchMessagesAndDisplayThem();
                 
