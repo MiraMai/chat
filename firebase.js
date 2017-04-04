@@ -97,7 +97,8 @@ window.addEventListener('load', function() { // Windows load
                   let ref = firebase.database().ref('inputMessage/' /*+ usernameInput.value*/).push({
 					    name: localStorage.getItem('username'),
                         message: message.value,
-                        time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year
+                        time: hours + ":" + minutes + ",   " + day + "/" + month + "/" + year,
+                        id: tr.id
             
                 })
                     message.value = "";
@@ -251,6 +252,46 @@ window.addEventListener('load', function() { // Windows load
 	})
 });
 
-    });    
+    });   
+    
+  /*   sortByValue.addEventListener('click', function () {
+              let sortByValuebtn = firebase.database();
+            sortByValuebtn.ref('inputMessage/').orderByValue('name')
+            .on('value', function(snapshot) {
+                snapshot.forEach( child => {
+                    let objekt = child.val();  // objekten kommer i ordning
+                    
+                    console.log(child.val());
+                    chat.style.display = "none";
+                    sortByNameChat.style.display = "inline";
+                    send.style.display = "none";
+                    sortNameSendbtn.style.display = "inline";
+                    
+                    
+                    // skapar en table   
+                    let tr = document.createElement('tr');
+                    let tdName = document.createElement('td');
+                    let tdMessage = document.createElement('td');
+                    let tdTime = document.createElement('td');  
+                     
+                     // set the content of the table 
+                 
+                      tdName.innerHTML = objekt.name+ ":";
+                      tdMessage.innerHTML = objekt.message;
+                      tdTime.innerHTML = objekt.time;
+                        
+                     // push the content to the table   
+                      sortByNameChat.appendChild(tr);
+                      tr.appendChild(tdName);
+                      tr.appendChild(tdMessage);
+                      tr.appendChild(tdTime);                       
+                
+	})
+});
+
+    });*/   
+    
+         
+     });
 
                 });// windows load
