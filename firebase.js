@@ -17,6 +17,7 @@ window.addEventListener('load', function() { // Windows load
     let pic = document.getElementById('pic');
     let sort = document.getElementById('sort');
     let sortByNameChat = document.getElementById('sortByNameChat');
+    let sortByValue = document.getElementById('sortByValue');
     logoutGithub.style.display = "none";
     logoutbtn.style.display = "none";
     message.style.display = "none";
