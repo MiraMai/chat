@@ -221,7 +221,7 @@ window.addEventListener('load', function() { // Windows load
             snapshot.forEach( child => {
                 let objekt = child.val();  // objekten kommer i ordning
 
-                console.log(child.val());
+           //     console.log(child.val());
                 //sortByNameChat.style.display = "inline";
                 send.style.display = "inline";
 
