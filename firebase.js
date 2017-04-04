@@ -255,16 +255,17 @@ window.addEventListener('load', function() { // Windows load
                 
     });
     
-  /*   sortByValue.addEventListener('click', function () {
+     sortByValue.addEventListener('click', function () {
               let sortByValuebtn = firebase.database();
             sortByValuebtn.ref('inputMessage/').orderByValue('name')
             .on('value', function(snapshot) {
                 snapshot.forEach( child => {
-                    let objekt = child.val();  // objekten kommer i ordning
+                    let valueObject = child.val();  // objekten kommer i ordning
                     
                     console.log(child.val());
                     chat.style.display = "none";
-                    sortByNameChat.style.display = "inline";
+                    sortByChat.style.display = "none";
+                    sortByValueChat.style.display = "inline";
                     send.style.display = "none";
                     sortNameSendbtn.style.display = "inline";
                     
@@ -277,12 +278,12 @@ window.addEventListener('load', function() { // Windows load
                      
                      // set the content of the table 
                  
-                      tdName.innerHTML = objekt.name+ ":";
-                      tdMessage.innerHTML = objekt.message;
-                      tdTime.innerHTML = objekt.time;
+                      tdName.innerHTML = valueObject.name+ ":";
+                      tdMessage.innerHTML = valueObject.message;
+                      tdTime.innerHTML = valueObject.time;
                         
                      // push the content to the table   
-                      sortByNameChat.appendChild(tr);
+                      sortByValueChat.appendChild(tr);
                       tr.appendChild(tdName);
                       tr.appendChild(tdMessage);
                       tr.appendChild(tdTime);                       
@@ -293,6 +294,6 @@ window.addEventListener('load', function() { // Windows load
     });   
     
          
-     });*/
+     });
 
                 });// windows load
