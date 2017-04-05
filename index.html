@@ -1,121 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Chat-chat-chat</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Chat-chat-chat</title>
         
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-<script src="https://use.fontawesome.com/a9f9509e90.js"></script>        
+    <script src="https://use.fontawesome.com/a9f9509e90.js"></script>        
 
-<link rel="stylesheet" href="style.css">
-       
-        
-        
-    </head>
+    <link rel="stylesheet" href="style.css">     
+  </head>
     
-    <body>
-      <div class="container">
-        <div class="row">
-           <div class="col-sm-12 text-center"><h1>Welcome to chat-chat-chat!</h1>
-           <button class="btn btn-default" id="admin">Admin</button>   
-            </div>  
-        </div>
+  <body>
+    <div class="container">
+        
+       <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1>Welcome to chat-chat-chat!</h1>
+            <button class="btn btn-default" id="admin">Admin</button>   
+          </div>  
+       </div>
         <br>
         <br>
         <br>
+        
         <div class="row">
           <div class="col-xs-1"></div>
           <div class="col-xs-4">
-                <br>
-                <div class="form-group">
-                    <input type="username" class="form-control" id="username" placeholder="Username">
-                </div>
-                <button type="login" class="btn btn-default" id="loginbtn">Login</button>
-              
+             <br>
+             <div class="form-group">
+                <input type="username" class="form-control" id="username" placeholder="Username">
+              </div>
+              <button type="login" class="btn btn-default" id="loginbtn">Login</button>              
           </div>
           <div class="col-xs-2">
-              <h3 class="text-center" id="or">or</h3>
+             <h3 class="text-center" id="or">or</h3>
           </div> 
           <div class="col-xs-4 text-center">
-              <br>
-              <button class="btn btn-default" id="githbLogin">Login with github <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+             <br>
+             <button class="btn btn-default" id="githbLogin">Login with github <i class="fa fa-github fa-2x" aria-hidden="true"></i>
               </button>              
           </div>    
           <div class="col-xs-1"></div>    
         </div>
+        
         <div class="row">
           <div class="col-sm-12 text-center">
-              <h4 id="loggedinName"></h4><div id="pic"></div>
-              <br>
-              <button type="logout" class="btn btn-default" id="logoutbtn">Logout</button>
-              <button type="logout" class="btn btn-default" id="logoutGithub">Logout</button>
+             <h4 id="loggedinName"></h4><div id="pic"></div>
+             <br>
+             <button type="logout" class="btn btn-default" id="logoutbtn">Logout</button>
+             <button type="logout" class="btn btn-default" id="logoutGithub">Logout</button>
           </div>
         </div>  
-          <br>
-          <br>
+        <br>
+        <br>
+        
         <div class="row">
-            <div class="col-sm-3"></div>
-             <div class="col-sm-6">
-                  <textarea class="form-control" rows="5" id="message" placeholder="Write your message here.."></textarea>
-                  <button type="send" class="btn btn-default" id="send">Send</button>
-                  <button type="send" class="btn btn-default" id="sortNameSendbtn">Send</button>
-                </div>
-            <div class="col-sm-3"></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8"><button class="btn btn-default" id="sort">Sort</button> </div>
-            <div class="col-sm-2"></div>               
-          </div>          
-          <div class="row">
-            <div class="col-sm-3"></div>  
-            <div class="col-sm-6">
-                <table class="table table-hover" id="table1">
-                   <tbody id="chat">
-                       <tr>
-                       </tr>
-                    </tbody>
-                </table>
-                <table class="table table-hover">
-                   <tbody id="sortByNameChat">
-                       <tr>
-                       </tr>
-                    </tbody>
-                </table>
-              </div>
-            <div class="col-sm-3"></div>  
-          </div>
+           <div class="col-sm-3"></div>
+           <div class="col-sm-6">
+              <textarea class="form-control" rows="5" id="message" placeholder="Write your message here.."></textarea>
+              <button type="send" class="btn btn-default" id="send">Send</button>
+           </div>
+           <div class="col-sm-3"></div>
+        </div>
+                 
+        <div class="row">
+           <div class="col-sm-3"></div>  
+           <div class="col-sm-6">
+              <table class="table table-hover">
+                 <tbody id="chat">
+                    <tr></tr>
+                 </tbody>
+               </table>
+           </div>
+           <div class="col-sm-3"></div>  
+        </div>
           
-      </div>   
+    </div>   <!-- end of container -->
         
     <!--********************** firebase***************************-->
         
-<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDswQw1vBTEt9Asf_EeNl4pFbJdUs4xt1Q",
-    authDomain: "chat-chat-chat-e26df.firebaseapp.com",
-    databaseURL: "https://chat-chat-chat-e26df.firebaseio.com",
-    storageBucket: "chat-chat-chat-e26df.appspot.com",
-    messagingSenderId: "345910730022"
-  };
-  firebase.initializeApp(config);
-</script>
-<!--****************************************************************        -->    
-    <script src="firebase.js"></script>
-<!--    <script src="authentication.js"></script>-->
+   <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+   <script>
+   // Initialize Firebase
+      var config = {
+         apiKey: "AIzaSyDswQw1vBTEt9Asf_EeNl4pFbJdUs4xt1Q",
+         authDomain: "chat-chat-chat-e26df.firebaseapp.com",
+         databaseURL: "https://chat-chat-chat-e26df.firebaseio.com",
+         storageBucket: "chat-chat-chat-e26df.appspot.com",
+         messagingSenderId: "345910730022"
+      };
+      firebase.initializeApp(config);
+   </script>
+   <!--****************************************************************        -->    
+  <script src="firebase.js"></script>
    
-        
-    </body>
+</body>
     
