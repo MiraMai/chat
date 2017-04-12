@@ -202,43 +202,9 @@ window.addEventListener('load', function() { // Windows load
         }); // end of logoutGithub
     
 //************************************************
-//************ sort btn ***************************
-/*    sort.addEventListener('click', function () {
-        
-        let sortbtn = firebase.database();
-            sortbtn.ref('inputMessage/').orderByChild('name')
-            .on('value', function(snapshot) {
-                snapshot.forEach( child => {
-                    let objekt = child.val();  // objekten kommer i ordning
-                    
-                    console.log(child.val());
-                    chat.style.display = "none";
-                    sortByNameChat.style.display = "inline";
-                    send.style.display = "none";
-                    sortNameSendbtn.style.display = "inline";
-                    
-                    
-                    // skapar en table   
-                    let tr = document.createElement('tr');
-                    let tdName = document.createElement('td');
-                    let tdMessage = document.createElement('td');
-                    let tdTime = document.createElement('td');  
-                     
-                     // set the content of the table 
-                 
-                      tdName.innerHTML = objekt.name+ ":";
-                      tdMessage.innerHTML = objekt.message;
-                      tdTime.innerHTML = objekt.time;
-                        
-                     // push the content to the table   
-                      sortByNameChat.appendChild(tr);
-                      tr.appendChild(tdName);
-                      tr.appendChild(tdMessage);
-                      tr.appendChild(tdTime);                       
-                
-	})
-});
 
-    });    */
+    // code to remove all objects
+    /*let ref = firebase.database();
+              ref.ref('inputMessage/').remove();*/
 
                 });// windows load
