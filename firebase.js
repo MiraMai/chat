@@ -150,8 +150,8 @@ window.addEventListener('load', function() { // Windows load
 	                    // Om autentisering lyckas, så finns användarinfo i user
 	                    let user = result.user;
                         localStorage.setItem('username',user.providerData[0].displayName);              
-                         /*console.log(user);
-                         console.log(user.providerData[0].email);
+                         console.log(user);
+                         /*console.log(user.providerData[0].email);
                          console.log(user.providerData[0].displayName);
                          console.log(user.providerData[0].photoURL);*/
                  
