@@ -19,5 +19,19 @@ td:nth-child(3) {
       margin-top: 100px;
             }
 
+body {
+    background: url('people.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.box {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background: beige;
+}
+
 
 
